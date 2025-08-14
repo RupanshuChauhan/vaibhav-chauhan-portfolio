@@ -13,7 +13,7 @@ const highlights = [
     title: 'AI/ML Expertise',
     description: 'Deep learning, computer vision, and NLP with TensorFlow and PyTorch',
     color: 'from-purple-500 to-pink-500',
-    stats: '50+ AI Models Built'
+  stats: '10+ AI Models Built'
   },
   {
     icon: Code,
@@ -147,11 +147,11 @@ export default function AboutSection() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-background rounded-lg border">
-                <div className="text-2xl font-bold text-primary">50+</div>
+                <div className="text-2xl font-bold text-primary">10+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
               <div className="text-center p-4 bg-background rounded-lg border">
-                <div className="text-2xl font-bold text-primary">3+</div>
+                <div className="text-2xl font-bold text-primary">2+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
             </div>

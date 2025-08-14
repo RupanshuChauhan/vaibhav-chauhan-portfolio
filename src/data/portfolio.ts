@@ -29,7 +29,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:vaivhavchauhan2162003@example.com',
+    url: 'mailto:vaivhavchauhan2162003@gmail.com',
     icon: 'Mail'
   }
 ]

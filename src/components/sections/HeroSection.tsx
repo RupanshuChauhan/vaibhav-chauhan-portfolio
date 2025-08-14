@@ -1,4 +1,5 @@
-'use client'
+ 'use client';
+import Image from 'next/image';
 
 import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
@@ -71,34 +72,40 @@ const Interactive3DAvatar = () => {
       animate={{
         rotateX: mousePosition.y,
         rotateY: mousePosition.x,
-        scale: isHovered ? 1.05 : 1
+        scale: isHovered ? 1.08 : 1
       }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
       style={{ transformStyle: "preserve-3d" }}
     >
-      {/* Simple rotating border */}
+      {/* Modern animated border */}
       <motion.div
-        className="absolute inset-0 rounded-full border-2 border-primary/30"
+        className="absolute inset-0 rounded-full border-4 border-blue-500/40 shadow-xl"
         animate={{ rotate: 360 }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
       />
-      
-      {/* Main avatar container */}
-      <div className="relative w-full h-full rounded-full bg-gradient-to-r from-primary to-blue-600 p-1">
-        <div className="w-full h-full rounded-full bg-background flex items-center justify-center text-4xl font-bold relative overflow-hidden border border-border">
-          {/* Initials */}
-          <span className="relative z-10 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent font-extrabold">
-            {personalInfo.name.split(' ').map(n => n[0]).join('')}
-          </span>
+
+      {/* Profile image container */}
+      <div className="relative w-full h-full rounded-full bg-gradient-to-r from-primary to-blue-600 p-1 flex items-center justify-center">
+        <div className="w-full h-full rounded-full overflow-hidden border-2 border-white shadow-lg">
+          <Image
+            src="/Vaibhav-Chauhan.jpg"
+            alt="Vaibhav Chauhan Profile"
+            width={220}
+            height={220}
+            className="w-full h-full object-cover rounded-full transition-transform duration-700 ease-in-out scale-100 hover:scale-105"
+            style={{ filter: isHovered ? 'brightness(1.1) saturate(1.2) drop-shadow(0 0 12px #3b82f6)' : 'brightness(1) saturate(1)' }}
+            priority
+          />
+          {/* Glassmorphism overlay removed for clarity */}
         </div>
       </div>
-      
-      {/* Simple hover glow */}
+
+      {/* Animated hover glow */}
       <motion.div
-        className="absolute inset-0 rounded-full bg-primary/20"
+        className="absolute inset-0 rounded-full bg-blue-500/20"
         animate={{
-          scale: isHovered ? [1, 1.2, 1] : [1, 1.1, 1],
-          opacity: isHovered ? [0.2, 0.4, 0.2] : [0.1, 0.2, 0.1]
+          scale: isHovered ? [1, 1.15, 1] : [1, 1.08, 1],
+          opacity: isHovered ? [0.25, 0.45, 0.25] : [0.12, 0.22, 0.12]
         }}
         transition={{ duration: 2.5, repeat: Infinity }}
       />
@@ -123,7 +130,7 @@ export default function HeroSection() {
   
   // Animated counters
   useEffect(() => {
-    const targets = { projects: 50, experience: 3, clients: 25 }
+  const targets = { projects: 10, experience: 2, clients: 5 }
     const duration = 2000
     const increment = 50
 

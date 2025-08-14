@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Github, Linkedin, Mail, Twitter } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Home', href: '#home' },
@@ -15,10 +16,10 @@ const navigation = [
 ]
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com', icon: Github },
-  { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
-  { name: 'Twitter', href: 'https://twitter.com', icon: Twitter },
-  { name: 'Email', href: 'mailto:vaibhav@example.com', icon: Mail },
+  { name: 'GitHub', href: 'https://github.com/Vaibhav0621', icon: Github },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/vaibhav-chauhan-21ab241bb/', icon: Linkedin },
+  { name: 'Twitter', href: 'https://x.com/Cyber_x_Panda', icon: Twitter },
+  { name: 'Email', href: 'mailto:vaivhavchauhan2162003@gmail.com', icon: Mail },
 ]
 
 interface LayoutProps {
@@ -81,10 +82,17 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center h-16 w-full">
             {/* Logo */}
             <motion.div
-              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              className="w-12 h-12 flex items-center justify-center overflow-hidden rounded-full bg-white/0"
               whileHover={{ scale: 1.05 }}
             >
-              VC
+              <Image
+                src="/Vaibhav-Chauhan.jpg"
+                alt="Vaibhav Chauhan"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-cover rounded-full border-2 border-blue-600 shadow-lg"
+                priority
+              />
             </motion.div>
 
             {/* Desktop Navigation */}

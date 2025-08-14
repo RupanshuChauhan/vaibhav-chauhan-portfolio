@@ -31,7 +31,7 @@ const SectionWrapper = ({
 );
 
 // Debug mode: Set to true to skip intro entirely
-const DEBUG_SKIP_INTRO = true;
+const DEBUG_SKIP_INTRO = false;
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(!DEBUG_SKIP_INTRO);
